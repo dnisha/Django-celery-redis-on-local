@@ -3,4 +3,4 @@ Refer - https://saasitive.com/tutorial/django-celery-redis-postgres-docker-compo
 mysql -umyuser -pmypassword 
 mysql -uroot -prootpassword
 
-http://localhost:8000/api/db-status/check-db/
+http://localhost/api/db-status/check-db/

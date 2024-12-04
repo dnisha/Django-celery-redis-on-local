@@ -7,7 +7,7 @@ from django.urls import path, include
 router = DefaultRouter()
 # router.register(r"assignments", AssignmentViewSet, basename="assignments")
 router.register(r'db-status', DatabaseConnectionViewSet, basename='db-status')
-router.register(r'upload', PdfUploadViewSet, basename='upload')
+router.register(r'upload', PdfUploadViewSet, basename='upload-file')
 
 # Define the URL patterns for the API
 # assignments_urlpatterns = router.urls
