@@ -9,6 +9,6 @@ app = Celery("backend")
 
 app.config_from_object("django.conf:settings", namespace="CELERY")
 
-app.conf.task_routes = {'assignments.tasks.task1': {'queue': 'queue1'}, 'assignments.tasks.task2': {'queue': 'queue2'}}
+app.conf.task_routes = {'assignments.tasks.task1': {'queue': 'queue1'}, 'assignments.tasks.long_running_task': {'queue': 'queue1'}, 'assignments.tasks.task2': {'queue': 'queue2'}}
 
 app.autodiscover_tasks()

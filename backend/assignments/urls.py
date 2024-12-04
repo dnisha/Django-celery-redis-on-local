@@ -1,18 +1,15 @@
 from django.urls import re_path, path
 from rest_framework.routers import DefaultRouter
 
-from assignments.views import DatabaseConnectionViewSet, PdfUploadViewSet  
+from assignments.views import DatabaseConnectionViewSet, PdfUploadViewSet, Task1ViewSet, Task2ViewSet
 from django.urls import path, include
-# Create the router for the existing viewset
+
 router = DefaultRouter()
-# router.register(r"assignments", AssignmentViewSet, basename="assignments")
+
 router.register(r'db-status', DatabaseConnectionViewSet, basename='db-status')
-router.register(r'upload', PdfUploadViewSet, basename='upload-file')
-
-# Define the URL patterns for the API
-# assignments_urlpatterns = router.urls
-
-# Add the new API endpoint for checking the DB connection
+router.register(r'upload', PdfUploadViewSet, basename='upload')
+router.register(r'task1', Task1ViewSet, basename='task1')
+router.register(r'task2', Task2ViewSet, basename='task2')
 
 urlpatterns = [
     path('api/', include(router.urls)),

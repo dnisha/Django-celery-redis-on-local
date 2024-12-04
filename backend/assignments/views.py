@@ -5,7 +5,7 @@ from rest_framework.exceptions import APIException
 
 # from assignments.models import Assignment
 # from assignments.serializers import AssignmentSerializer
-from assignments.tasks import long_running_task
+from assignments.tasks import long_running_task, task1, task2
 
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
@@ -52,6 +52,21 @@ class PdfUploadViewSet(viewsets.ViewSet):
     def upload(self, request):
         long_running_task.delay()
         return JsonResponse({"message": "Task has been started!"})
+    
+class Task1ViewSet(viewsets.ViewSet):
+
+    @action(detail=False, methods=['get'], url_path='task1')
+    def upload(self, request):
+        task1.delay()
+        return JsonResponse({"message": "Task1 has been started!"})
+
+
+class Task2ViewSet(viewsets.ViewSet):
+
+    @action(detail=False, methods=['get'], url_path='task2')
+    def upload(self, request):
+        task2.delay()
+        return JsonResponse({"message": "Task2 has been started!"})
 
 
 
