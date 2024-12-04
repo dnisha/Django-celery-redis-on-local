@@ -8,3 +8,12 @@ def long_running_task():
     time.sleep(10)  # Simulate a long-running task (e.g., 10 seconds)
     print("Task finished!")
     return "Task complete"
+
+
+@shared_task
+def task1():
+    return
+
+@shared_task
+def task2():
+    return

@@ -6,6 +6,8 @@ ENV PYTHONUNBUFFERED 1
 
 ENV PYTHONDONTWRITEBYTECODE 1
 
+COPY . /usr/share/app/
+
 RUN apk update && \
     apk add --no-cache \
     python3-dev \
@@ -19,5 +21,7 @@ RUN pip install --upgrade pip
 ADD ./requirements.txt /usr/share/app/requirements.txt
 
 RUN pip install -r /usr/share/app/requirements.txt
+
+
 
 
